@@ -1,0 +1,133 @@
+<!doctype HTML>
+    <html>
+        <head>
+            <meta charset='utf-8'/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+            <link rel='stylesheet' type="text/css" href='css/main2.css'/>
+            <title>
+                ai là thánh troll 
+            </title>
+            <script src='js/jquery.js'></script>
+            <script src='js/fitText.js'></script>
+            <script src='js/squishy.min.js'></script>
+            <script src='js/flowtype.js'></script>
+           
+        </head>
+        
+    <body>
+        <div id='wrapper'>
+            <div id='gameLoading'>
+                <p id='loadingText'>đợi tí nhá,hí hí hí hí hí hí :V .....</p>
+                <p id='loadingGameInfo'>
+                    .Vstudio - ultra troll
+                </p>
+            </div>
+            <div id='sound'>
+                <div id='soundOff'>
+                     <svg  viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1280 352v1088q0 26-19 45t-45 19-45-19l-333-333h-262q-26 0-45-19t-19-45v-384q0-26 19-45t45-19h262l333-333q19-19 45-19t45 19 19 45z"/>
+                     </svg>
+                </div><!--sound Off -->
+                <div id='soundOn'>
+                    <svg  viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M832 352v1088q0 26-19 45t-45 19-45-19l-333-333h-262q-26 0-45-19t-19-45v-384q0-26 19-45t45-19h262l333-333q19-19 45-19t45 19 19 45zm384 544q0 76-42.5 141.5t-112.5 93.5q-10 5-25 5-26 0-45-18.5t-19-45.5q0-21 12-35.5t29-25 34-23 29-35.5 12-57-12-57-29-35.5-34-23-29-25-12-35.5q0-27 19-45.5t45-18.5q15 0 25 5 70 27 112.5 93t42.5 142zm256 0q0 153-85 282.5t-225 188.5q-13 5-25 5-27 0-46-19t-19-45q0-39 39-59 56-29 76-44 74-54 115.5-135.5t41.5-173.5-41.5-173.5-115.5-135.5q-20-15-76-44-39-20-39-59 0-26 19-45t45-19q13 0 26 5 140 59 225 188.5t85 282.5zm256 0q0 230-127 422.5t-338 283.5q-13 5-26 5-26 0-45-19t-19-45q0-36 39-59 7-4 22.5-10.5t22.5-10.5q46-25 82-51 123-91 192-227t69-289-69-289-192-227q-36-26-82-51-7-4-22.5-10.5t-22.5-10.5q-39-23-39-59 0-26 19-45t45-19q13 0 26 5 211 91 338 283.5t127 422.5z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div id='gameMenu'>
+                <div id='menuAvatarWrapper'>
+                    <img src='face/me_gusta_creepy.gif'/>
+                </div>
+                <div id='menuButtonWrapper'>
+                    <div id='gameStartBtn' class='onTouchStart'>
+                        Chiến luôn
+                    </div>
+                    
+                    <div id='highScoreBtn' class='onTouchStart'>
+                        Xem ai cao hơn nào ! 
+                    </div>
+                    
+                    <div id='aboutBtn' class='onTouchStart'>
+                        Về đứa làm trò này
+                    </div>
+                </div>
+            </div><!-- khi moi bat dau game -->
+            
+            <div id='gameStart'>
+                <div id='confirmWrapper'>
+                    <div id='confirmContent'>muon choi ko ? </div>
+                        <div id='ok'>Ok</div>
+                        <div id='no'>nope</div>
+                </div>
+
+                <div id='infoWrapper'>
+                    <div id='infoDialogContent'>test info dialog   </div>  
+                </div>
+
+                <div id='gameInfoWrapper'>
+                    <div id='life'>3</div>
+                    <div class='score'> đúng :</div>
+                    <div id='questionNum' >c1</div>
+                    <div id='questionWrapper'>
+                        <div id='questionPic'>
+                        </div>
+                        <div id='question'></div>
+                    </div><!--question wrapper -->
+                </div><!--end gameInfo-->
+                <div id='gameContent'>  
+                    <div class='answer onTouchStart' value='A' ></div>
+                    <div class='answer onTouchStart' value='B'></div>
+                    <div class='answer onTouchStart' value='C'></div>
+                    <div class='answer onTouchStart' value='D'></div>
+
+                    <div id='dialog'>
+
+                    </div>
+
+                    <div id='popup'>
+
+                    </div>
+                </div><!--end gameContent-->
+            </div><!--end game Start Screen -->
+            
+            <div id='gameOverWrapper'>
+                <div id='gameOverImgWrapper'>
+                    <img src='face/dancing.gif'/>
+                </div>
+                <div id='gameOverScore'></div>
+                <div id='gameOverTrollContent'></div>
+                 <div id='gameOverWrapperBtn'>
+                    <!-- <div class='score'> đúng :</div> -->
+                    <div id='playAgainBtn' class='onTouchStart'>
+                        chơi lại 
+                    </div>
+                    <div id='menuBtn' class='onTouchStart'>
+                        về menu chính
+                    </div>
+                 </div> 
+            </div><!-- game OVer screen -->
+
+            <div id='highScoreWrapper'>
+                <div id='highScoreHeader'>Hall of Troll</div>
+                <div id='highScore'>999</div>
+                <div id='highScoreCloseBtn' class='onTouchStart'>Menu</div>
+            </div>
+
+            <div id='aboutWrapper'>
+                <img src='face/dancing.gif'/>
+                <div id='aboutContentWrapper'>
+                    <div id='aboutNameWrapper'>
+                        <div id='aboutAuthor'>.Vstudio</div>
+                        <div id='aboutGame'>Ai là thánh troll</div>
+                    </div>
+                    <div id='aboutAppWrapper'>
+                        <div id='aboutRate' class='onTouchStart'>hay,cho 5 sao! </div>
+                        <div id='aboutMoreApp' class='onTouchStart'>thêm apps</div>
+                    </div>
+                    <div id='aboutMenu' class='onTouchStart'>menu</div>
+                </div>
+                
+            </div> <!-- end aboutWrapper -->
+        </div><!-- end wrapper -->
+         <script src='js/object.js'></script>
+    </body>
+    </html>

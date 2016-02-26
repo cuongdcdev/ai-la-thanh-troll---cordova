@@ -1,0 +1,112 @@
+<script src='jquery.js'></script>
+<script>
+    var userChoose = '';
+    var score = 0 ;
+    var life = 3 ;
+    
+     var Troll = {
+        Question  : [],
+        getQuestion :  function(url){
+            self = this;
+          var tmp = document.createElement("div");
+          $(tmp).load(url,function(){
+            self.Question = $(tmp).text().split("\n");
+            console.log("ok! loaded question ! " ) ;
+          })
+        },
+        getQuestionNum : function(){
+            return this.Question[0];
+        },
+        getQuestionName : function(){
+            return this.Question[1];
+        },
+        getAnswer: function(ans){
+            var arrAns = [];
+            for(var i = 3 ; i < 7 ; i++){
+                arrAns.push(this.Question[i]);
+            }
+            switch(ans){
+                case "a":
+                    return arrAns[0];
+                break;
+                    
+                case "b":
+                    return arrAns[1];
+                break;
+                    
+                case "c":
+                    return arrAns[2];
+                break;
+                    
+                case "d":
+                    return arrAns[3];
+                break;
+                    
+                default : 
+                    console.log("getAnswers _ nhap ten dap an ! " );
+            }
+        }
+         ,
+        getCorrectAnswer : function(){
+            return this.Question[3];
+        },
+        getExplain : function(){
+            return this.Question[7];
+        }
+    }
+      
+    var Game = {
+        checkAnswer : function(){
+            if(userChoose === Troll.getAnswer())return true;
+            else return false;
+        },
+        chooseTrue : function(){
+            score++;
+            console.log("Game.chooseTrue _ choose true !,score ++ "); 
+        },
+        chooseFalse : function(){
+            life--;
+            conole.log("Game.chooseFalse _ choose false ! , life--");
+            
+        },
+        gameOver : function(){
+            console.log("game Over " );
+        },
+        resetGame : function(){
+            //reset Game ! ...
+        },
+        gameComplete : function(){
+            //chuc mung nguoi choi 
+        },
+        notify : function(content){
+            //hien ra 1 thong bao nao do , tuy noi dung 
+            alert(content);
+            console.log("notify activated ! " );
+        },
+        clickNotify : function(){
+          // check xem nguoi dung bam vao notify la ok hay cancel ! , neu cancel thi huy thong bao , huy check answers  
+        },
+        confirmAnswer : function(timesConfirm){
+            //hoi ban co muon chon dap an nay ko ?
+            if(timeConfirm){
+                arr = [
+                    
+                      ];
+                var length = timesConfirm;
+                if(timesConfirm > arr.length){
+                length =arr.length-1;  
+                for(var i = 0 ; i < length){
+                    this.notify(arr[i]);
+                    i++;
+                    if(this.clickNotify() === false){
+                        console.log("confirmAnser,user bam cancel,tat notify ! " );   
+                        break;
+                    }
+                    console.log("confirm Answer , notify lan thu " + (i + 1) + " trong tong so " + length " lan "   );
+                }   
+                }
+            }//end check timesConfirm
+        },//end confirm Answer 
+
+    }
+</script>

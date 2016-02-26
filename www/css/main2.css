@@ -1,0 +1,532 @@
+/* Reset
+------------------------------------------------------------ */
+* { margin: 0; padding: 0; }
+html { overflow-y: scroll;overflow-x: hidden;width:100%;height:100%}
+body { background:#ffffff; font-size: 13px; color: #666666; font-family: Arial, helvetica, sans-serif;width:100%;height:100%}
+ol, ul { list-style: none; margin: 0;}
+ul li { margin: 0; padding: 0;}
+h1 { margin-bottom: 10px; color: #111111;}	
+a, img { outline: none; border:none; color: #000; font-weight: bold; text-transform: uppercase;margin:0 auto;}
+p { margin: 0 0 10px; line-height: 1.4em; font-size: 1.2em;}
+img { display: block; margin-bottom: 10px;}
+aside { font-style: italic; font-size: 0.9em;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
+
+#wrapper {
+    position: absolute;
+    top:0;
+    left:0;
+    width :100%;
+    height:100%;
+    background-color: white;
+    overflow: hidden;
+    font-size:18px;
+}
+
+#mainContent {
+    position: absolute;
+    top : 0;
+    width : 80%;
+    height : 100%;
+    background-color: white;
+}
+
+
+
+#gameContent {
+    /* float: left; */
+    display: block;
+    width : 100%;
+    height : 40%;
+    background-color:white;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+}
+    #gameInfoWrapper{
+        width : 100%;
+        height : 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+    }
+.answer {
+    position: relative;
+    font-size: 130%;
+    line-height:260%;
+    width:100%;
+    height:22%;
+    min-height: 20px;
+    text-align: center;
+    overflow: hidden;
+    background-color:white;
+    float : left;
+    display:block;
+    margin:1px 0%;
+    border:2px solid gray;
+    color:black;
+}
+    .answer:nth-child(1){
+        margin-top : 0 ;
+        margin-bottom: 1px;
+    }
+    .answer:nth-child(4){
+        margin-top:1px;
+    }
+
+/*UI : */
+    .touchStart{
+        background-color : yellow !important;
+    }
+        /*QUESTION SECTION : */
+
+    #questionWrapper{
+        position: relative;
+        width : 100%;
+        height: 100%;
+        background-color: white;
+        /*border : 2px solid green;*/
+    }
+
+        #questionPic {
+            border: 2px solid #FFF;
+            width: 80%;
+            height: 60%;
+            display: block;
+            margin: 5% auto ;
+            margin-bottom:5%;
+            position: relative;
+        }
+            #questionPic img{
+                max-width : 100%;
+                height : 100%;
+                display: block;
+            }
+
+        #question {
+            border :2px;
+            color : black;
+            display: block;
+            font-weight: bold;
+            width : 80%;
+            height : 20%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top : 4px;
+            font-size: 122%;
+            position: relative;
+        }
+/*GAME INFO  :*/
+#gameInfoWrapper {
+    width : 100%;
+    height : 50%;
+    /*background-color:green;*/
+}
+    #questionNum {
+        position: absolute;
+        color: black;
+        z-index: 2;
+        font-size: 2em;
+        top: 0px;
+        left: 2%;
+        text-decoration: underline;
+    }
+
+    #life {
+        position: absolute;
+        color: black;
+        z-index: 2;
+        font-size: 2em;
+        top: 0px;
+        right: 2%;
+        text-decoration: underline;
+    }
+    
+    .score {
+        font-size: 2em;
+        color: black;
+        z-index: 2 !important;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -1%;
+    }
+
+    #sound{
+        position: absolute;
+        top: 0;
+        left: 2%;
+        z-index: 9999;
+        width: 7%;
+        height: 7%;
+    }
+        #soundOn{
+            display: block;
+        }
+        #soundOff{
+            display:none;
+        }
+        #sound svg{
+            width : 100%;
+            height : 100%;
+        }
+/*INFO BOXES : */
+#confirmWrapper {
+    display: none;
+    width: 80%;
+    height: 40%;
+    z-index: 999999;
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid gray;
+    left: 50%;
+}
+    #confirmContent{
+        width: 100%;
+        height: 70%;
+        text-align: center;
+        border-bottom: 2px solid black;
+    }
+    #ok{
+        width: 40%;
+        height: 30%;
+        float: left;
+        border-right: 2px solid black;
+        text-align: center;
+    }
+
+    #no{
+        width: 40%;
+        height: 30%;
+        float: right;
+        border-left: 2px solid black;
+        margin-right: 5%;
+        text-align: center;
+    }
+
+#infoWrapper{
+    display: none;
+    position: absolute;
+    bottom: 16%;
+    border-radius: 5px;
+    padding: 2% 0%;
+    z-index: 2147483647;
+    width: 80%;
+    height:20%;
+    left: 50%;
+    background-color:yellow;
+    transform: translateX(-50%);
+    opacity:0.8;
+}
+#infoDialogContent{
+    text-align: center;
+    color : black;
+    z-index: 99999999;
+}
+
+
+/*GAME STATE : */
+        /*STATE MENU : */
+#gameLoading{
+    width : 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color:yellow;
+    color:black;
+    display: block;
+    z-index:999999;
+}
+    #gameLoading #loadingText{
+        color: #111111;
+        position: relative;
+        font-weight: 100;
+        display: block;
+        top: 53%;
+        text-align: center
+    }
+    #gameLoading #loadingGameInfo{
+        color: #111111;
+        position: relative;
+        font-weight: 100;
+        display: block;
+        top: 30%;
+        text-align: center;
+        border: 2px solid black;
+        width: 80%;
+    }
+#gameMenu{
+    display: block;
+    width: 100%;
+    height : 100%;
+    position:absolute;
+    top:0;
+    overflow: hidden;
+}
+    #menuAvatarWrapper{
+        width : 100%;
+        margin:0 auto;
+        height : 40%;
+        background-color:white;
+        margin-bottom: 5%;
+    }
+        #menuAvatarWrapper img{
+            max-width : 100%;
+            height:100%;
+            margin : 0 auto;
+            display: block;
+        }
+    #menuButtonWrapper{
+        width : 100%;
+        height : 70%;
+        display: block;
+        float : left;
+        font-size: 25%,
+    }
+
+    /*STATE START GAME : */
+        #gameStartBtn ,#highScoreBtn,#aboutBtn{
+            width : 100%;
+            height : 25%;
+            min-height : 50px;
+            background-color:white;
+            text-align: center;
+            margin: 0 auto;
+            font-size : 207%;
+            line-height: 2;
+            position:relative;
+        }
+        #gameStartBtn,#aboutBtn{
+            border-top : 2px solid black;
+            border-bottom : 2px solid black;
+        }
+         #gameStart{
+                display:none;
+                width : 100%;
+                height : 100%;
+                overflow: hidden;
+            }
+
+
+        /* GAME STATE OVER :/ */
+#gameOverWrapper{
+    width : 100%;
+    height : 100%;
+    overflow: hidden;
+    display: none;
+}
+    #gameOverImgWrapper{
+        max-width : 100%;
+        height : 50%;
+        display: block;
+    }
+    #gameOverImgWrapper img{
+        max-width : 100%;
+        height : 100%;
+        background-repeat: no-repeat;
+        display: block;
+        margin:0 auto;
+    }
+
+#gameOverTrollContent{
+    /*position: relative;*/
+    width: 100%;
+    height: 5%;
+    display: block;
+    background-color: white;
+    float: left;
+    margin-top: 3%;
+    text-align: center;
+    font-size:140%;
+    line-height: 2;
+}
+#gameOverScore{
+    width: 100%;
+    height: 10%;
+    color:black;
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    float: left;
+    text-align: center;
+    border-top-color: white;
+    font-weight: bold;
+    font-size:200%;
+    line-height: 2;
+}
+
+#gameOverWrapperBtn{
+    width: 100%;
+    height: 20%;
+    float: left;
+    display: block;
+    margin-top: 2%;
+    float: left;
+}
+
+/*GAME STATE HIGHSCORE */
+#highScoreWrapper{
+    width : 100%;
+    height : 100%;
+    position : absolute;
+    display: none;
+    top : 0 ;
+    left : 0;
+    background-color: white;
+    overflow:hidden;
+}
+    #highScoreContent{
+        width : 80%;
+        height : 60%;
+        left : 10%;
+        right : 10%;
+        top:20%;
+        bottom: 20%;
+        background-color : yellow;
+        color : black;
+        font-weight: bolder;
+        text-align: center;
+    }
+        #highScoreHeader{
+            width: 100%;
+            height: 10%;
+            display: block;
+            font-weight: bold;
+            font-size: 200%;
+            line-height: 2;
+        }
+        #highScore{
+            width: 100%;
+            height: 60%;
+            display: block;
+            font-weight: bolder;
+            background-color: yellow;
+            margin-bottom: 7% !important;
+            font-size: 1000%;
+            line-height: 2;
+        }
+        #highScoreCloseBtn{
+            width: 80%;
+            height: 10%;
+            min-height: 40px;
+            text-align: center;
+            margin: 0 auto;
+            color: black;
+            font-weight: bolder;
+            border: 2px solid black;
+            font-size: 253%;
+            line-height: 2;
+        }
+    #highScore,#highScoreWrapper{
+        margin : 0 auto;
+        text-align: center;
+    }
+
+    #playAgainBtn,#menuBtn{
+        background-color : yellow;
+        border-radius: 5px;
+        color : black;
+        display:block;
+        margin : 0 auto !important;
+        text-align: center;
+    }
+    #playAgainBtn{
+        width : 80%;
+        height : 50%;
+        font-size:140%;
+        line-height: 2;
+        margin-bottom : 2% !important;
+    }
+    #menuBtn{
+        width : 60%;
+        height : 30%;
+        font-size:140%;
+        line-height: 2;
+    }
+
+    /*ABOUT STATE : */
+    #aboutWrapper{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        background-color: white;
+        display: none;
+        z-index: 99999999;
+    }
+        #aboutWrapper img{
+            max-width: 100%;
+            height: 60%;
+        }
+        #aboutContentWrapper{
+            width: 100%;
+            height: 40%;
+        }
+        #aboutNameWrapper{
+            width: 100%;
+            height: 50%;
+            text-align: center;
+        }
+            #aboutAuthor{
+                width: 30%;
+                height: 20%;
+                text-align: center;
+                color: black;
+                background-color: yellow;
+                margin: 0 auto;
+                margin-bottom: 20px;
+            }
+            #aboutGame{
+                width: 80%;
+                height: 80%;
+                display: block;
+                /* float: left; */
+                background-color: yellow;
+                margin: 0 auto;
+                font-size: 200%;
+                font-weight: bolder;
+                line-height: 2;
+            }
+        #aboutAppWrapper{
+            width: 100%;
+            height: 20%;
+            background-color: yellow;
+            display: block;
+            text-align: center;
+        }
+        #aboutRate,#aboutMoreApp{
+            font-size: 200%;
+            line-height: 2;
+        }
+            #aboutRate{
+                width: 60%;
+                float: left;
+                text-align: center;
+                height: 100%;
+            }
+            #aboutMoreApp{
+                width: 40%;
+                float: right;
+                text-align: center;
+                height: 100%;
+            }
+
+        #aboutMenu{
+            width: 100%;
+            height: 10%;
+            display: block;
+            text-align: center;
+            background-color: white;
+            font-size: 150%;
+            font-weight: bolder;
+            text-transform: uppercase;
+            border : 1px solid black;
+            line-height: 1.5;
+        }
